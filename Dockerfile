@@ -20,6 +20,7 @@ ENV NODE_ENV=production
 ENV PORT=$PORT
 ENV HOST=0.0.0.0
 COPY --chown=node:node ./package*.json ./
+RUN npm i reflect-metadata
 RUN npm ci --production
 COPY --chown=node:node --from=build /home/node/app/build .
 EXPOSE $PORT
