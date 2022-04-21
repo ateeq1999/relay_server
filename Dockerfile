@@ -4,6 +4,7 @@ FROM $NODE_IMAGE AS base
 RUN apk --no-cache add dumb-init
 RUN mkdir -p /home/node/app && chown node:node /home/node/app
 WORKDIR /home/node/app
+RUN apt update && apt install ffmpeg -y
 USER node
 RUN mkdir tmp
 
