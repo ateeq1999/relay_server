@@ -7,9 +7,9 @@ services:
         # image: linuxserver/ffmpeg
         # networks:
         #   - b2c
-        ports:
-          - "29002:29000"
-        tty: true
+        # ports:
+        #   - "29002:29000"
+        # tty: true
         entrypoint: "bash"
   postgres:
     container_name: postgres
