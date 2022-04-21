@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Streaming</title>
+        <meta charset="UTF-8" />
+        <style>
+          .artplayer-app {
+              width: 90%;
+              height: 500px;
+              margin: 50px;
+              padding: 50px;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.1.5/hls.js" integrity="sha512-YR4vWgTmC0QwRfYKWTy1eTMvBYpmAsSGP76is/15Uxqfa3N/qYRZKFE8pf66GsfSrFksaJkNmbTS2BcdLamZoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.6.2/flv.js" integrity="sha512-QECfRDI/EqKlxrR+AjI7AyHXFxq1GYeOhlm+Li/gqphSJYPrf4+KMgrt3/UylP0sFNhs4sGmdCtc4MX9zAth/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.3.2/shaka-player.compiled.js" integrity="sha512-U39VmFSdSsT+MG/0JpPxx245eVE7VwB/x3zaEDmmSPLP5RIiUlLfEffLoRuj+JAbqJu3uB0Wwz2etPNFEs2DhQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/artplayer/dist/artplayer.js"></script>
+    </head>
+    <body>
+        <div class="artplayer-app"></div>
+        <script src="{{ asset('assets/app.js') }}"></script>
+    </body>
+</html>

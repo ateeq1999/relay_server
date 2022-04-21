@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>S24 Streaming</title>
+        <meta charset="UTF-8" />
+        <style>
+            .artplayer-app {
+              width: 96%;
+              height: 500px;
+              /* margin: 50px;
+              padding: 50px; */
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.1.5/hls.js" integrity="sha512-YR4vWgTmC0QwRfYKWTy1eTMvBYpmAsSGP76is/15Uxqfa3N/qYRZKFE8pf66GsfSrFksaJkNmbTS2BcdLamZoA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flv.js/1.6.2/flv.js" integrity="sha512-QECfRDI/EqKlxrR+AjI7AyHXFxq1GYeOhlm+Li/gqphSJYPrf4+KMgrt3/UylP0sFNhs4sGmdCtc4MX9zAth/w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.3.2/shaka-player.compiled.js" integrity="sha512-U39VmFSdSsT+MG/0JpPxx245eVE7VwB/x3zaEDmmSPLP5RIiUlLfEffLoRuj+JAbqJu3uB0Wwz2etPNFEs2DhQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://unpkg.com/artplayer/dist/artplayer.js"></script>
+        <link rel="stylesheet" href="{{ asset('assets/app.css') }}">
+    </head>
+    <body>
+        <div class="mockup-window border bg-base-300">
+            <div class="flex justify-center px-4 py-16 bg-base-200 mb-4">S24 Live Streaming</div>
+            <div class="artplayer-app p-6 m-6"></div>
+        </div>
+        <script src="{{ asset('assets/live.js') }}"></script>
+    </body>
+</html>
