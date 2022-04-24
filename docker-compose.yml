@@ -5,15 +5,13 @@ networks:
     driver: bridge
 services:
   ffmpeg:
-        container_name: ffmpeg
-        # image: jrottenberg/ffmpeg
-        image: linuxserver/ffmpeg
-        networks:
-          - b2c
-        ports:
-          - "29002:29000"
-        tty: true
-        entrypoint: "bash"
+    container_name: ffmpeg
+    image: jrottenberg/ffmpeg
+    entrypoint: "bash"
+    environment: 
+      FFMPEG_BIN_PATH: /usr/local/bin/ffmpeg
+    volumes:
+      - ~/usr/local/bin/ffmpeg:/usr/local/bin/ffmpeg
   postgres:
     container_name: postgres
     image: postgres:13
