@@ -28,6 +28,8 @@ export default Env.rules({
 	MINIO_SECRET: Env.schema.string(),
 	MINIO_ENDPOINT: Env.schema.string(),
 	MINIO_PORT: Env.schema.number(),
+	RTMP_PORT: Env.schema.number(),
+	HTTP_PORT: Env.schema.number(),
 
 	FFMPEG_BIN_PATH: Env.schema.string.optional(),
 	NMS_HTTP_MEDIA_ROOT: Env.schema.string(),
