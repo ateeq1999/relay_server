@@ -7,11 +7,11 @@ services:
   ffmpeg:
     container_name: ffmpeg
     image: jrottenberg/ffmpeg
-    entrypoint: "bash"
-    environment: 
-      FFMPEG_BIN_PATH: /usr/local/bin/ffmpeg
-    volumes:
-      - ~/bin/ffmpeg:~/usr/local/bin/ffmpeg
+    # entrypoint: "bash"
+    # environment: 
+    #   FFMPEG_BIN_PATH: /usr/local/bin/ffmpeg
+    # volumes:
+    #   - ~/bin/ffmpeg:~/usr/local/bin/ffmpeg
   postgres:
     container_name: postgres
     image: postgres:13
