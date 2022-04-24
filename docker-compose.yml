@@ -11,7 +11,7 @@ services:
     environment: 
       FFMPEG_BIN_PATH: /usr/local/bin/ffmpeg
     volumes:
-      - ~/usr/local/bin/ffmpeg:/usr/local/bin/ffmpeg
+      - ~/usr/local/bin/ffmpeg:~/usr/local/bin/ffmpeg
   postgres:
     container_name: postgres
     image: postgres:13
