@@ -3,13 +3,13 @@ version: '3.8'
 services:
   ffmpeg:
         container_name: ffmpeg
-        image: jrottenberg/ffmpeg
-        # image: linuxserver/ffmpeg
-        # networks:
-        #   - b2c
-        # ports:
-        #   - "29002:29000"
-        # tty: true
+        # image: jrottenberg/ffmpeg
+        image: linuxserver/ffmpeg
+        networks:
+          - b2c
+        ports:
+          - "29002:29000"
+        tty: true
         entrypoint: "bash"
   postgres:
     container_name: postgres

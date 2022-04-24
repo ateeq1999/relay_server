@@ -2,8 +2,8 @@ ARG NODE_IMAGE=node:18-alpine3.14
 
 FROM $NODE_IMAGE AS base
 RUN apk --no-cache add dumb-init
-RUN mkdir -p /home/node/app && chown node:node /home/node/app
-WORKDIR /home/node/app
+RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
+WORKDIR /usr/src/app
 RUN apt update && apt install ffmpeg -y
 USER node
 RUN mkdir tmp
@@ -22,6 +22,6 @@ ENV PORT=$PORT
 ENV HOST=0.0.0.0
 COPY --chown=node:node ./package*.json ./
 RUN npm ci --production
-COPY --chown=node:node --from=build /home/node/app/build .
+COPY --chown=node:node --from=build /usr/src/app/build .
 EXPOSE $PORT
 CMD [ "dumb-init", "node", "server.js" ]
