@@ -24,7 +24,7 @@ let quality = [
 var art = new Artplayer({
     container: '.artplayer-app',
     autoplay: true,
-    url: server_url + '/S24/live/index.m3u8', // static pull from local folder
+    url: server_url, // static pull from local folder
     quality,
     customType: {
         flv: function(video, url){
