@@ -1,18 +1,23 @@
-const server_url = 'https://94.237.94.0:8888'
+const ip = '94.237.94.0'
+// const ip = 'localhost'
+const server_url = `http://${ip}:5000/S24/live/index.m3u8`
+const live_720 = `http://${ip}:5000/S24/live_720/index.m3u8`
+const live_480 = `http://${ip}:5000/S24/live_480/index.m3u8`
+const live_360 = `http://${ip}:5000/S24/live_360/index.m3u8`
 
 let quality = [
     {
         default: true,
         html: 'SD 720P',
-        url: server_url + '/S24/live_720/index.m3u8',
+        url: live_720,
     },
     {
         html: 'SD 480P',
-        url: server_url + '/S24/live_480/index.m3u8',
+        url: live_480,
     },
     {
         html: 'HD 360P',
-        url: server_url + '/S24/live_360/index.m3u8',
+        url: live_360,
     },
 ]
 

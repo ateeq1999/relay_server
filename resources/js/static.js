@@ -1,25 +1,26 @@
-const server_url = 'https://94.237.94.0:8888'
+const server_url = 'http://94.237.94.0:5000/systech/demo.flv'
+// const server_url = 'http://localhost:5000/systech/demo.flv'
 
 let quality = [
     {
         default: true,
         html: 'SD 720P',
-        url: server_url + '/systech/demo.flv',
+        url: server_url,
     },
     {
         html: 'SD 480P',
-        url: server_url + '/systech/demo.flv',
+        url: server_url,
     },
     {
         html: 'HD 360P',
-        url: server_url + '/systech/demo.flv',
+        url: server_url,
     },
 ]
 
 var art = new Artplayer({
     container: '.artplayer-app',
     autoplay: true,
-    url: server_url + '/systech/demo/index.m3u8', // static pull from local folder
+    url: server_url, // static pull from local folder
     quality,
     customType: {
         flv: function(video, url){
