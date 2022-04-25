@@ -1,4 +1,4 @@
-const server_url = 'https://localhost:8000'
+const server_url = 'https://localhost:8888'
 
 let quality = [
     {
