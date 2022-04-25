@@ -1,4 +1,4 @@
-const server_url = 'https://localhost:8888'
+const server_url = 'https://94.237.94.0:8888'
 
 let quality = [
     {
@@ -19,8 +19,7 @@ let quality = [
 var art = new Artplayer({
     container: '.artplayer-app',
     autoplay: true,
-    url: 'http://localhost:5050/S24/live/index.m3u8', // static pull from local folder
-    // url: 'https://localhost:5050/S24/live/index.mpd',
+    url: server_url + '/S24/live/index.m3u8', // static pull from local folder
     quality,
     customType: {
         flv: function(video, url){
