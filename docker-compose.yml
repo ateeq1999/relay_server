@@ -1,12 +1,11 @@
 version: '3.8'
 
-networks:
-  b2c:
-    driver: bridge
 services:
   ffmpeg:
     container_name: ffmpeg
     image: jrottenberg/ffmpeg
+    networks:
+      - host
     # entrypoint: "bash"
     # environment: 
     #   FFMPEG_BIN_PATH: /usr/local/bin/ffmpeg
@@ -51,6 +50,9 @@ services:
     volumes:
       - ./:/home/node/app
     command: dumb-init node ace serve --watch --node-args="--inspect=0.0.0.0"
+    links:
+      - ffmpeg
+
 
 volumes:
   postgres_volume:
