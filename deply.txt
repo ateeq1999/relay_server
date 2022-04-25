@@ -1,0 +1,56 @@
+pm2 delete 0
+
+sudo nano /etc/nginx/sites-available/default
+
+sudo unlink /etc/nginx/sites-enabled/default
+
+sudo nano /etc/nginx/sites-available/relay_server
+
+sudo cp ./relay_server /etc/nginx/sites-available/relay_server
+
+sudo ln -s /etc/nginx/sites-available/example1.com /etc/nginx/sites-enabled/
+
+sudo nginx -t
+
+sudo systemctl reload nginx
+
+sudo service nginx restart
+
+sudo systemctl stop nginx && cd /relay/relay_server
+
+cd /var/www/html && rm -rf relay_server/
+
+sudo git clone https://github.com/ateeq1999/relay_server.git && cd relay_server/
+
+git clone pull
+
+sudo npm install && sudo node ace build --production && sudo cp .env.example build/.env && cd build && sudo npm ci --production
+
+pm2 start server.js && sudo systemctl start nginx
+
+
+server_name 94.237.94.0;
+
+location / {
+    proxy_pass http://localhost:3333;
+    proxy_http_version 1.1;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header Host $host;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+}
+
+mysql password: password
+
+list all port services
+
+sudo lsof -i -P -n
+sudo lsof -i:3333
+
+PID of process bound on that port
+fuser 3333/tcp
+
+kill process bound on that port
+fuser -k 3333/tcp
+kill $(lsof -t -i:3333)

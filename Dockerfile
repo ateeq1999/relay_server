@@ -5,6 +5,7 @@ RUN apk --no-cache add dumb-init
 RUN mkdir -p /usr/src/app && chown node:node /usr/src/app
 WORKDIR /usr/src/app
 RUN apt update && apt install ffmpeg -y
+RUN apt-get install -y ffmpeg
 USER node
 RUN mkdir tmp
 

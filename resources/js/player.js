@@ -1,36 +1,25 @@
+const server_url = 'https://localhost:8000'
+
 let quality = [
     {
         default: true,
         html: 'SD 720P',
-        url: 'https://localhost:5050/mbc/pinia_720.flv',
-        // url: 'https://localhost:5050/mbc/pinia_720/index.mpd',
-        // url: 'https://localhost:5050/mbc/pinia_720/index.m3u8',
+        url: server_url + '/S24/live_720/index.m3u8',
     },
     {
         html: 'SD 480P',
-        url: 'https://localhost:5050/mbc/pinia_480.flv',
-        // url: 'https://localhost:5050/mbc/pinia_480/index.mpd',
-        // url: 'https://localhost:5050/mbc/pinia_480/index.m3u8',
+        url: server_url + '/S24/live_480/index.m3u8',
     },
     {
         html: 'HD 360P',
-        url: 'https://localhost:5050/mbc/pinia_360.flv',
-        // url: 'https://localhost:5050/mbc/pinia_360/index.mpd',
-        // url: 'https://localhost:5050/mbc/pinia_360/index.m3u8',
+        url: server_url + '/S24/live_360/index.m3u8',
     },
 ]
 
 var art = new Artplayer({
     container: '.artplayer-app',
     autoplay: true,
-    // url: 'http://localhost:5050/local_push_app/local.flv', // static pull from local folder
-    url: 'http://localhost:5050/local_push_app/local.mpd', // static pull from local folder
-    url: 'http://localhost:5050/sd/demo/index.m3u8', // static pull from local folder
-    // url: 'https://localhost:5050/mbc/pinia.flv',
-    // url: 'https://localhost:5050/mbc/pinia.m3u8',
-    // url: 'https://localhost:5050/mbc/pinia/index.mpd',
-    // url: 'http://localhost:3000/tmp/output/pinia.m3u8',
-    // url: 'https://localhost:5050/mbc/pinia/index.m3u8',
+    url: server_url + '/S24/live/index.m3u8', // static pull from local folder
     quality,
     customType: {
         flv: function(video, url){

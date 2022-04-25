@@ -1,31 +1,25 @@
+const server_url = 'https://localhost:8000'
+
 let quality = [
     {
         default: true,
         html: 'SD 720P',
-        // url: 'https://localhost:5050/systech/demo_720/index.mpd',
-        // url: 'https://localhost:5050/systech/demo_720/index.m3u8',
-        url: 'http://localhost:5050/systech/demo.flv',
+        url: server_url + '/systech/demo.flv',
     },
     {
         html: 'SD 480P',
-        url: 'http://localhost:5050/systech/demo.flv',
-        // url: 'https://localhost:5050/systech/demo_450/index.mpd',
-        // url: 'https://localhost:5050/systech/demo_480/index.m3u8',
+        url: server_url + '/systech/demo.flv',
     },
     {
         html: 'HD 360P',
-        url: 'http://localhost:5050/systech/demo.flv',
-        // url: 'https://localhost:5050/systech/demo_360/index.mpd',
-        // url: 'https://localhost:5050/systech/demo_360/index.m3u8',
+        url: server_url + '/systech/demo.flv',
     },
 ]
 
 var art = new Artplayer({
     container: '.artplayer-app',
     autoplay: true,
-    url: 'http://localhost:5050/systech/demo.flv', // static pull from local folder
-    // url: 'http://localhost:5050/systech/demo/index.m3u8', // static pull from local folder
-    // url: 'https://localhost:5050/systech/demo/index.mpd',
+    url: server_url + '/systech/demo/index.m3u8', // static pull from local folder
     quality,
     customType: {
         flv: function(video, url){

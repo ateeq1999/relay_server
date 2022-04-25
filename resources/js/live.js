@@ -1,22 +1,18 @@
+const server_url = 'https://localhost:8000'
+
 let quality = [
     {
         default: true,
         html: 'SD 720P',
-        // url: 'https://localhost:5050/S24/live.flv',
-        // url: 'https://localhost:5050/S24/live_720/index.mpd',
-        url: 'https://localhost:5050/S24/live_720/index.m3u8',
+        url: server_url + '/S24/live_720/index.m3u8',
     },
     {
         html: 'SD 480P',
-        // url: 'https://localhost:5050/S24/live.flv',
-        // url: 'https://localhost:5050/S24/live_480/index.mpd',
-        url: 'https://localhost:5050/S24/live_480/index.m3u8',
+        url: server_url + '/S24/live_480/index.m3u8',
     },
     {
         html: 'HD 360P',
-        // url: 'https://localhost:5050/S24/live_360/index.mpd',
-        url: 'https://localhost:5050/S24/live_360/index.m3u8',
-        // url: 'https://localhost:5050/S24/live.flv',
+        url: server_url + '/S24/live_360/index.m3u8',
     },
 ]
 
