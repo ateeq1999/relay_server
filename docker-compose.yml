@@ -1,19 +1,10 @@
 version: '3.8'
 
-networks:
-  b2c:
-    driver: host
 services:
   ffmpeg:
     container_name: ffmpeg
     image: jrottenberg/ffmpeg
-    networks:
-      - host
-    # entrypoint: "bash"
-    # environment: 
-    #   FFMPEG_BIN_PATH: /usr/local/bin/ffmpeg
-    # volumes:
-    #   - ~/bin/ffmpeg:~/usr/local/bin/ffmpeg
+    
   postgres:
     container_name: postgres
     image: postgres:13
