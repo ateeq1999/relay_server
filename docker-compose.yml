@@ -1,5 +1,8 @@
 version: '3.8'
 
+networks:
+  b2c:
+    driver: host
 services:
   ffmpeg:
     container_name: ffmpeg
@@ -50,9 +53,6 @@ services:
     volumes:
       - ./:/home/node/app
     command: dumb-init node ace serve --watch --node-args="--inspect=0.0.0.0"
-    links:
-      - ffmpeg
-
 
 volumes:
   postgres_volume:
