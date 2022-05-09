@@ -1,10 +1,12 @@
-import Env from '@ioc:Adonis/Core/Env'
+// import Env from '@ioc:Adonis/Core/Env'
 import AuthConfig from './nms/auth'
 import FissionServer from './nms/fissionServer'
 import httpConfig from './nms/http'
 import RelayServer from './nms/relayServer'
 import rtpmConfig from './nms/rtmp'
 import TransServer from './nms/transServer'
+import FFmpegInstaller from '@ffmpeg-installer/ffmpeg';
+// const ffmpeg = require('@ffmpeg-installer/ffmpeg');
 
 const nmsConfig = {
     logType: 3,
@@ -12,15 +14,18 @@ const nmsConfig = {
     auth: AuthConfig.auth,
     http: httpConfig.http,
     trans: {
-        ffmpeg: Env.get('FFMPEG_BIN_PATH'),
+        ffmpeg: FFmpegInstaller.path,
+        // ffmpeg: Env.get('FFMPEG_BIN_PATH'),
         tasks: TransServer.tasks,
     },
     relay: {
-        ffmpeg: Env.get('FFMPEG_BIN_PATH'),
+        ffmpeg: FFmpegInstaller.path,
+        // ffmpeg: Env.get('FFMPEG_BIN_PATH'),
         tasks: RelayServer.tasks
     },
     fission: {
-        ffmpeg: Env.get('FFMPEG_BIN_PATH'),
+        ffmpeg: FFmpegInstaller.path,
+        // ffmpeg: Env.get('FFMPEG_BIN_PATH'),
         tasks: FissionServer.tasks
     }
 }
