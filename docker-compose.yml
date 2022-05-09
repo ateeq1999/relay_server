@@ -3,6 +3,10 @@ version: '3.8'
   # ffmpeg:
   #   container_name: ffmpeg
   #   image: jrottenberg/ffmpeg
+networks:
+  b2c:
+    driver: bridge
+
 services:
   ffmpeg:
     container_name: b2c-ffmpeg
