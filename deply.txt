@@ -55,6 +55,8 @@ kill process bound on that port
 fuser -k 3333/tcp
 kill $(lsof -t -i:3333)
 
+docker rm $(docker ps --filter status=created -q)
+docker rm $(docker ps --filter status=exited -q)
 docker container stop $(docker container ls -a -q)
 docker container rm $(docker container ls -a -q)
 docker image rm $(docker image ls -q) 
