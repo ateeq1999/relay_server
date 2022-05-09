@@ -73,3 +73,5 @@ const  videoSizes  = ["1920x1080", "1280x720",   "854x480", "640x360"];
 
 MINIO RUN
 "D:\Programs\Developments\minio.exe" server D:\minio --console-address ":9900"
+
+ffmpeg -re -i ./tmp/demo.mp4 -c copy -f flv rtmp://94.237.94.0/S24/live

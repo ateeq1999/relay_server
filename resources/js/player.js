@@ -1,4 +1,4 @@
-const server_url = 'https://94.237.94.0:8888'
+const server_url = 'https://94.237.94.0:5000'
 
 let quality = [
     {
